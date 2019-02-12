@@ -314,7 +314,7 @@ remove_multilines <- function(s) {
     exploded.sl <- SpatialLines(exploded_lines.ls, proj4string = s@proj4string)
 
     if (inherits(s, 'SpatialLinesDataFrame')) {
-      exploded.sldf <- SpatialLinesDataFrame(exploded.sl, s@data[exploded_lines.id,], FALSE)
+      exploded.sldf <- SpatialLinesDataFrame(exploded.sl, s@data[exploded_lines.id, , drop = F], FALSE)
       out <- exploded.sldf
     } else {
       out <- exploded.sl
